@@ -690,11 +690,12 @@ function run_command(action) {
   if (panel) {
     panel.reveal(vscode.ViewColumn.One);
     runSelectedAction();
+    //vw.showInformationMessage('ABM Action: ' + (action ? action : ''));
   }
   else {
 
     panel = vw.createWebviewPanel(
-      'marlinConfig', 'Auto Build Marlin',
+      'marlinConfig', 'Auto Build',
       vscode.ViewColumn.One,
       {
         enableCommandUris: true,         // The view can accept commands?
@@ -744,6 +745,8 @@ function run_command(action) {
 
     // Create an IPC file for messages from Terminal
     createIPCFile();
+
+    //vw.showInformationMessage('ABM View Ready: ' + (action ? action : ''));
   }
   set_context('visible', true);
 }
